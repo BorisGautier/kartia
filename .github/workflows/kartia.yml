@@ -28,6 +28,11 @@ jobs:
         with:
           channel: "stable"
           flutter-version: "3.29.3"
+      
+      # Create Env File
+      - name: "Create env file"
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
 
       # Création des fichiers de configuration Firebase à partir des secrets
       - name: Create Firebase Configuration Files
