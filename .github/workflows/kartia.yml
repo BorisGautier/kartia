@@ -62,10 +62,6 @@ jobs:
       - name: Analyze code
         run: dart analyze --fatal-infos .
 
-      # Exécution des tests unitaires et de widget (commenté pour l'instant)
-      # - name: Run tests
-      #   run: flutter test
-
       # Construction de l'APK Android (uniquement pour les push sur main)
       - name: Build Android APK
         if: github.ref == 'refs/heads/main'
@@ -75,16 +71,6 @@ jobs:
       - name: Build iOS
         if: github.ref == 'refs/heads/main'
         run: flutter build ios --release --no-codesign
-
-      # Facultatif: archivage des artefacts de build avec une version compatible
-      # Utilisation de la version 2 au lieu de la version 3
-      - name: Archive Android build
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v2
-        with:
-          name: android-release
-          path: build/app/outputs/flutter-apk/app-release.apk
-          retention-days: 7
 
       # Facultatif: notification de réussite
       - name: Notify build success
