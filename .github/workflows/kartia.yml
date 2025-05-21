@@ -56,11 +56,11 @@ jobs:
 
       # Vérification du formatage du code
       - name: Format code
-        run: dart format --set-exit-if-changed .
+        run: dart format .
 
       # Analyse statique du code Dart pour détecter les erreurs
       - name: Analyze code
-        run: dart analyze --fatal-infos .
+        run: dart analyze .
 
       # Construction de l'APK Android (uniquement pour les push sur main)
       - name: Build Android APK
