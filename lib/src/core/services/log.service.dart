@@ -1,7 +1,7 @@
 // lib/services/log_service.dart
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:flutter_gemini_demo/src/core/utils/logging.util.dart';
+import 'package:kartia/src/core/utils/logging.util.dart';
 import 'package:logger/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'dart:io';

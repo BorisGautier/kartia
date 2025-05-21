@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, avoid_print
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gemini_demo/src/core/services/log.service.dart';
+import 'package:kartia/src/core/services/log.service.dart';
 
 // Cette classe est utilisée pour gérer tout ce qui se passe à l'intérieur des blocs de l'application.
 // Elle est initiée lorsque l'application est lancée.

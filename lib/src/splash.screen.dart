@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gemini_demo/src/core/utils/sizes.util.dart';
+import 'package:kartia/src/core/utils/sizes.util.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/images/png/logo-nom.png',
+                'assets/images/logo.png',
                 width: 200.0,
                 fit: BoxFit.fitWidth,
               ),

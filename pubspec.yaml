@@ -1,5 +1,5 @@
-name: flutter_gemini_demo
-description: "A new Flutter project."
+name: kartia
+description: "SuperApp IA cartographique open-source pour l'Afrique"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -85,6 +85,26 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - .env
+    - assets/images/
+
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/open_sans/Roboto-Regular.ttf
+    - family: OpenSans-Bold
+      fonts:
+        - asset: assets/fonts/open_sans/Roboto-Bold.ttf
+    - family: OpenSans-Light
+      fonts:
+        - asset: assets/fonts/open_sans/Roboto-Light.ttf
+    - family: OpenSans-Semibold
+      fonts:
+        - asset: assets/fonts/open_sans/Roboto-Medium.ttf
+    - family: OpenSans-Italic
+      fonts:
+        - asset: assets/fonts/open_sans/Roboto-Italic.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -118,5 +138,5 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 flutter_intl:
   enabled: true
-  class_name: FlutterGeminiLocalizations
+  class_name: KatiaLocalizations
   main_locale: fr

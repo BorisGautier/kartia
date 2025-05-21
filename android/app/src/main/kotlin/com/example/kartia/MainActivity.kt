@@ -1,4 +1,4 @@
-package com.example.flutter_gemini_demo
+package com.example.kartia
 
 import io.flutter.embedding.android.FlutterActivity
 

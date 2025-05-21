@@ -1,8 +1,8 @@
-import 'package:flutter_gemini_demo/src/core/database/db.dart';
-import 'package:flutter_gemini_demo/src/core/helpers/network.helper.dart';
-import 'package:flutter_gemini_demo/src/core/helpers/sharedpreferences.helper.dart';
-import 'package:flutter_gemini_demo/src/core/services/log.service.dart';
-import 'package:flutter_gemini_demo/src/modules/app/bloc/app_bloc.dart';
+import 'package:kartia/src/core/database/db.dart';
+import 'package:kartia/src/core/helpers/network.helper.dart';
+import 'package:kartia/src/core/helpers/sharedpreferences.helper.dart';
+import 'package:kartia/src/core/services/log.service.dart';
+import 'package:kartia/src/modules/app/bloc/app_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;

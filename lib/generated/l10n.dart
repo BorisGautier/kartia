@@ -12,22 +12,22 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
-class FlutterGeminiLocalizations {
-  FlutterGeminiLocalizations();
+class KatiaLocalizations {
+  KatiaLocalizations();
 
-  static FlutterGeminiLocalizations? _current;
+  static KatiaLocalizations? _current;
 
-  static FlutterGeminiLocalizations get current {
+  static KatiaLocalizations get current {
     assert(
       _current != null,
-      'No instance of FlutterGeminiLocalizations was loaded. Try to initialize the FlutterGeminiLocalizations delegate before accessing FlutterGeminiLocalizations.current.',
+      'No instance of KatiaLocalizations was loaded. Try to initialize the KatiaLocalizations delegate before accessing KatiaLocalizations.current.',
     );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
-  static Future<FlutterGeminiLocalizations> load(Locale locale) {
+  static Future<KatiaLocalizations> load(Locale locale) {
     final name =
         (locale.countryCode?.isEmpty ?? false)
             ? locale.languageCode
@@ -35,37 +35,34 @@ class FlutterGeminiLocalizations {
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = FlutterGeminiLocalizations();
-      FlutterGeminiLocalizations._current = instance;
+      final instance = KatiaLocalizations();
+      KatiaLocalizations._current = instance;
 
       return instance;
     });
   }
 
-  static FlutterGeminiLocalizations of(BuildContext context) {
-    final instance = FlutterGeminiLocalizations.maybeOf(context);
+  static KatiaLocalizations of(BuildContext context) {
+    final instance = KatiaLocalizations.maybeOf(context);
     assert(
       instance != null,
-      'No instance of FlutterGeminiLocalizations present in the widget tree. Did you add FlutterGeminiLocalizations.delegate in localizationsDelegates?',
+      'No instance of KatiaLocalizations present in the widget tree. Did you add KatiaLocalizations.delegate in localizationsDelegates?',
     );
     return instance!;
   }
 
-  static FlutterGeminiLocalizations? maybeOf(BuildContext context) {
-    return Localizations.of<FlutterGeminiLocalizations>(
-      context,
-      FlutterGeminiLocalizations,
-    );
+  static KatiaLocalizations? maybeOf(BuildContext context) {
+    return Localizations.of<KatiaLocalizations>(context, KatiaLocalizations);
   }
 
-  /// `Gemini Demo`
+  /// `Katia`
   String get appname {
-    return Intl.message('Gemini Demo', name: 'appname', desc: '', args: []);
+    return Intl.message('Katia', name: 'appname', desc: '', args: []);
   }
 }
 
 class AppLocalizationDelegate
-    extends LocalizationsDelegate<FlutterGeminiLocalizations> {
+    extends LocalizationsDelegate<KatiaLocalizations> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -78,8 +75,8 @@ class AppLocalizationDelegate
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<FlutterGeminiLocalizations> load(Locale locale) =>
-      FlutterGeminiLocalizations.load(locale);
+  Future<KatiaLocalizations> load(Locale locale) =>
+      KatiaLocalizations.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

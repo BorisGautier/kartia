@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gemini_demo/src/core/services/log.service.dart';
-import 'package:flutter_gemini_demo/src/core/utils/themes.util.dart';
+import 'package:kartia/src/core/services/log.service.dart';
+import 'package:kartia/src/core/utils/themes.util.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'app_event.dart';

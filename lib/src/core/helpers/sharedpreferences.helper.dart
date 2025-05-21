@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, avoid_print
 
-import 'package:flutter_gemini_demo/src/core/services/log.service.dart';
+import 'package:kartia/src/core/services/log.service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesHelper {
