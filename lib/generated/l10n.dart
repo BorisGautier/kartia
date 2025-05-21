@@ -12,22 +12,22 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
-class KatiaLocalizations {
-  KatiaLocalizations();
+class KartiaLocalizations {
+  KartiaLocalizations();
 
-  static KatiaLocalizations? _current;
+  static KartiaLocalizations? _current;
 
-  static KatiaLocalizations get current {
+  static KartiaLocalizations get current {
     assert(
       _current != null,
-      'No instance of KatiaLocalizations was loaded. Try to initialize the KatiaLocalizations delegate before accessing KatiaLocalizations.current.',
+      'No instance of KartiaLocalizations was loaded. Try to initialize the KartiaLocalizations delegate before accessing KartiaLocalizations.current.',
     );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
-  static Future<KatiaLocalizations> load(Locale locale) {
+  static Future<KartiaLocalizations> load(Locale locale) {
     final name =
         (locale.countryCode?.isEmpty ?? false)
             ? locale.languageCode
@@ -35,34 +35,34 @@ class KatiaLocalizations {
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = KatiaLocalizations();
-      KatiaLocalizations._current = instance;
+      final instance = KartiaLocalizations();
+      KartiaLocalizations._current = instance;
 
       return instance;
     });
   }
 
-  static KatiaLocalizations of(BuildContext context) {
-    final instance = KatiaLocalizations.maybeOf(context);
+  static KartiaLocalizations of(BuildContext context) {
+    final instance = KartiaLocalizations.maybeOf(context);
     assert(
       instance != null,
-      'No instance of KatiaLocalizations present in the widget tree. Did you add KatiaLocalizations.delegate in localizationsDelegates?',
+      'No instance of KartiaLocalizations present in the widget tree. Did you add KartiaLocalizations.delegate in localizationsDelegates?',
     );
     return instance!;
   }
 
-  static KatiaLocalizations? maybeOf(BuildContext context) {
-    return Localizations.of<KatiaLocalizations>(context, KatiaLocalizations);
+  static KartiaLocalizations? maybeOf(BuildContext context) {
+    return Localizations.of<KartiaLocalizations>(context, KartiaLocalizations);
   }
 
-  /// `Katia`
+  /// `Kartia`
   String get appname {
-    return Intl.message('Katia', name: 'appname', desc: '', args: []);
+    return Intl.message('Kartia', name: 'appname', desc: '', args: []);
   }
 }
 
 class AppLocalizationDelegate
-    extends LocalizationsDelegate<KatiaLocalizations> {
+    extends LocalizationsDelegate<KartiaLocalizations> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -75,8 +75,8 @@ class AppLocalizationDelegate
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<KatiaLocalizations> load(Locale locale) =>
-      KatiaLocalizations.load(locale);
+  Future<KartiaLocalizations> load(Locale locale) =>
+      KartiaLocalizations.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

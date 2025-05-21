@@ -9,7 +9,6 @@ import 'package:kartia/src/modules/home/views/home.screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MyApp extends StatelessWidget {
-  // Le constructeur prend un paramètre initialLink et appelle le constructeur de la classe parent avec la clé et le paramètre initialLink.
   const MyApp({super.key});
 
   @override
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
             theme: state.themeData,
             // Les délégués de localisation sont utilisés pour traduire le texte de l'application dans la langue préférée de l'utilisateur.
             localizationsDelegates: const [
-              KatiaLocalizations.delegate,
+              KartiaLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
             // La langue préférée de l'utilisateur est définie en fonction de l'état actuel de l'application.
             locale: state.locale,
             // La liste des langues que l'application prend en charge.
-            supportedLocales: KatiaLocalizations.delegate.supportedLocales,
+            supportedLocales: KartiaLocalizations.delegate.supportedLocales,
             // Désactive la bannière de débogage.
             debugShowCheckedModeBanner: false,
             // Le widget LoadingPage est affiché en tant que page d'accueil de l'application.

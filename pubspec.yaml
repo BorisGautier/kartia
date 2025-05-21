@@ -140,5 +140,5 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 flutter_intl:
   enabled: true
-  class_name: KatiaLocalizations
+  class_name: KartiaLocalizations
   main_locale: fr

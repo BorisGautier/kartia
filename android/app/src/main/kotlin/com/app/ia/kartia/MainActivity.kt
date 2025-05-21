@@ -1,4 +1,4 @@
-package com.app.ia.katia
+package com.app.ia.kartia
 
 import io.flutter.embedding.android.FlutterActivity
 
