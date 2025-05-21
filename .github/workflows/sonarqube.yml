@@ -1,26 +1,42 @@
-name: "SonarQube Kartia"
+name: "Kartia SonarQube"
 
 on:
   push:
-    branches:
-      - main
-
+    branches: ["main", "dev"]
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout du code
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@master
+          fetch-depth: 0  # Désactiver le clone superficiel pour une meilleure analyse SonarQube
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.29.3"
+          channel: "stable"
+
+      - name: Vérifier l'installation de Flutter
+        run: flutter --version
+
+      - name: Ajouter Flutter au PATH
+        run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
+
+      - name: Installer les dépendances Flutter
+        run: flutter pub get
+
+      - name: Vérifier l'environnement
+        run: printenv
+
+      - name: Analyse du code avec Flutter
+        run: flutter analyze --no-fatal-warnings --no-fatal-infos
+
+      - name: Exécuter SonarQube
+        uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: sonarsource/sonarqube-quality-gate-action@master
-      #   timeout-minutes: 5
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
