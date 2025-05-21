@@ -76,10 +76,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: flutter build ios --release --no-codesign
 
-      # Facultatif: archivage des artefacts de build
+      # Facultatif: archivage des artefacts de build avec une version compatible
+      # Utilisation de la version 2 au lieu de la version 3
       - name: Archive Android build
         if: github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: android-release
           path: build/app/outputs/flutter-apk/app-release.apk
