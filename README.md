@@ -142,7 +142,7 @@ lib/
 
 KartIA est conçu pour fonctionner dans des zones à connectivité limitée :
 
-- Stockage local des données via Hive
+- Stockage local des données via Drift
 - Mise en cache des tuiles de carte pour les zones fréquentes
 - Upload différé des contributions lorsque la connexion est rétablie
 - Fonctionnalités dégradées mais toujours utilisables sans connexion
