@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             // Le titre de l'application.
-            title: "Katia",
+            title: "Kartia",
             // Le thème de l'application est défini en fonction de l'état actuel de l'application.
             theme: state.themeData,
             // Les délégués de localisation sont utilisés pour traduire le texte de l'application dans la langue préférée de l'utilisateur.
