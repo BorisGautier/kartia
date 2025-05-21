@@ -19,6 +19,32 @@ jobs:
         with:
           flutter-version: "3.29.3"
           channel: "stable"
+      
+      # Create Env File
+      - name: "Create env file"
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
+      # Création des fichiers de configuration Firebase à partir des secrets
+      - name: Create Firebase Configuration Files
+        run: |
+          # Création du répertoire si nécessaire
+          mkdir -p android/app
+          mkdir -p ios/Runner
+          
+          # Décodage et création du fichier de configuration Firebase pour Android
+          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+          
+          # Décodage et création du fichier de configuration Firebase pour iOS
+          echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" | base64 --decode > ios/Runner/GoogleService-Info.plist
+          
+          # Décodage et création du fichier d'options Firebase pour Flutter
+          echo "${{ secrets.FIREBASE_OPTIONS_DART }}" | base64 --decode > lib/firebase_options.dart
+          
+          # Vérification que les fichiers sont bien créés (pour le debug)
+          ls -la android/app/
+          ls -la ios/Runner/
+          ls -la lib/
 
       - name: Vérifier l'installation de Flutter
         run: flutter --version
