@@ -1,49 +1,91 @@
 name: "Kartia"
 
-# This workflow is triggered on pushes to the repository.
-
+# Ce workflow est déclenché sur les push et pull requests
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main", "dev"]
 
-# on: push    # Default will running for every branch.
-
 jobs:
   build:
-    # This job will run on ubuntu virtual machine
+    # Ce job s'exécutera sur une machine virtuelle macOS
     runs-on: macos-latest
     steps:
-      # Setup Java environment in order to build the Android app.
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v2
+      # Configuration de l'environnement Java pour construire l'app Android
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v2
         with:
           distribution: "zulu"
           java-version: "17"
 
-      # Setup the flutter environment.
-      - uses: subosito/flutter-action@v2
+      # Configuration de l'environnement Flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          channel: "stable" # 'dev', 'alpha', default to: 'stable'
-          flutter-version: "3.29.3" # you can also specify exact version of flutter
+          channel: "stable"
+          flutter-version: "3.29.3"
 
-      # Get flutter dependencies.
-      - run: flutter pub get
+      # Création des fichiers de configuration Firebase à partir des secrets
+      - name: Create Firebase Configuration Files
+        run: |
+          # Création du répertoire si nécessaire
+          mkdir -p android/app
+          mkdir -p ios/Runner
+          
+          # Décodage et création du fichier de configuration Firebase pour Android
+          echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > android/app/google-services.json
+          
+          # Décodage et création du fichier de configuration Firebase pour iOS
+          echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" | base64 --decode > ios/Runner/GoogleService-Info.plist
+          
+          # Décodage et création du fichier d'options Firebase pour Flutter
+          echo "${{ secrets.FIREBASE_OPTIONS_DART }}" | base64 --decode > lib/firebase_options.dart
+          
+          # Vérification que les fichiers sont bien créés (pour le debug)
+          ls -la android/app/
+          ls -la ios/Runner/
+          ls -la lib/
 
-      # Check for any formatting issues in the code.
-      - run: dart format .
+      # Installation des dépendances Flutter
+      - name: Get Flutter dependencies
+        run: flutter pub get
 
-      # Statically analyze the Dart code for any errors.
-      - run: dart analyze .
+      # Vérification du formatage du code
+      - name: Format code
+        run: dart format --set-exit-if-changed .
 
-      # Run widget tests for our flutter project.
-      # - run: flutter test
+      # Analyse statique du code Dart pour détecter les erreurs
+      - name: Analyze code
+        run: dart analyze --fatal-infos .
 
-      # Build apk.
+      # Exécution des tests unitaires et de widget (commenté pour l'instant)
+      # - name: Run tests
+      #   run: flutter test
+
+      # Construction de l'APK Android (uniquement pour les push sur main)
+      - name: Build Android APK
         if: github.ref == 'refs/heads/main'
-      - run: flutter build apk
+        run: flutter build apk --release
 
-      # Build Ios
+      # Construction de l'application iOS (uniquement pour les push sur main)
+      - name: Build iOS
         if: github.ref == 'refs/heads/main'
-      - run: flutter build ios --release --no-codesign
+        run: flutter build ios --release --no-codesign
+
+      # Facultatif: archivage des artefacts de build
+      - name: Archive Android build
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-release
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 7
+
+      # Facultatif: notification de réussite
+      - name: Notify build success
+        if: success() && github.ref == 'refs/heads/main'
+        run: echo "Build completed successfully!"
