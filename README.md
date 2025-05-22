@@ -155,9 +155,6 @@ lib/
    ```env
    # Mapbox
    MAPBOX_API_KEY=your_mapbox_api_key_here
-   
-   # Environnement
-   ENVIRONMENT=development
    ```
 
 5. **Configurez Firebase :**
@@ -173,11 +170,7 @@ lib/
 
 7. **Lancez l'application :**
    ```bash
-   # Mode développement
-   flutter run --flavor dev -t lib/main_dev.dart
-   
-   # Mode production
-   flutter run --flavor prod -t lib/main_prod.dart
+   flutter run 
    ```
 
 ## 🔄 Mode Hors-ligne
@@ -292,35 +285,29 @@ genhtml coverage/lcov.info -o coverage/html
 
 ## 📱 Variantes de Build
 
-### Environnement de développement
 ```bash
-flutter run --flavor dev -t lib/main_dev.dart
-```
-
-### Environnement de staging
-```bash
-flutter run --flavor staging -t lib/main_staging.dart
+flutter run
 ```
 
 ### Production
 ```bash
 # Android
-flutter build appbundle --flavor prod -t lib/main_prod.dart
+flutter build appbundle --release
 
 # iOS
-flutter build ipa --flavor prod -t lib/main_prod.dart
+flutter build ipa --release
 ```
 
 ## 🚀 Déploiement
 
 ### Android (Google Play Store)
 ```bash
-flutter build appbundle --release --flavor prod
+flutter build appbundle --release
 ```
 
 ### iOS (App Store)
 ```bash
-flutter build ipa --release --flavor prod
+flutter build ipa --release
 ```
 
 ### Déploiement automatique

@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "🚨 Vulnérabilité de sécurité critique"
+    url: "mailto:security@kartia.app"
+    about: "Pour signaler une vulnérabilité de sécurité critique (CONFIDENTIEL)"
+  - name: "💬 Discussion générale"
+    url: "https://github.com/BorisGautier/kartia/discussions"
+    about: "Pour les discussions générales, questions, et idées"
+  - name: "📖 Documentation"
+    url: "https://docs.kartia.app"
+    about: "Consultez la documentation officielle"
+  - name: "🌍 Communauté Discord"
+    url: "https://discord.gg/kartia"
+    about: "Rejoignez notre communauté Discord"
+  - name: "📧 Contact direct"
+    url: "mailto:me@borisgautier.com"
+    about: "Contact direct avec le mainteneur du projet"

@@ -1,0 +1,92 @@
+name: 🛠️ Infrastructure/DevOps
+description: Amélioration infrastructure, CI/CD, ou outils de développement
+title: "[INFRA] "
+labels: ["infrastructure", "enhancement"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposez une amélioration de l'infrastructure, CI/CD, ou des outils de développement.
+
+  - type: dropdown
+    id: infra_area
+    attributes:
+      label: Domaine d'infrastructure
+      description: Quel domaine d'infrastructure voulez-vous améliorer ?
+      options:
+        - CI/CD Pipeline
+        - Build & Deployment
+        - Testing Infrastructure
+        - Monitoring & Analytics
+        - Security & Compliance
+        - Database & Storage
+        - APIs & Services
+        - Development Tools
+        - Documentation Tools
+        - Performance Monitoring
+        - Backup & Recovery
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_situation
+    attributes:
+      label: Situation actuelle
+      description: Décrivez la situation actuelle et le problème
+      placeholder: "Actuellement, nous avons..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_improvement
+    attributes:
+      label: Amélioration proposée
+      description: Décrivez l'amélioration que vous proposez
+      placeholder: "Je propose de..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: Quel serait l'impact de cette amélioration ?
+      options:
+        - Critique (bloque le développement)
+        - Haut (amélioration significative)
+        - Moyen (amélioration utile)
+        - Bas (amélioration mineure)
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: benefits
+    attributes:
+      label: Bénéfices attendus
+      description: Quels bénéfices cette amélioration apporterait-elle ?
+      options:
+        - label: Réduction du temps de développement
+        - label: Amélioration de la qualité
+        - label: Réduction des coûts
+        - label: Meilleure sécurité
+        - label: Amélioration des performances
+        - label: Meilleure observabilité
+        - label: Facilitation maintenance
+        - label: Amélioration expérience développeur
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Plan d'implémentation
+      description: Esquissez un plan d'implémentation si vous en avez un
+      placeholder: "Étapes proposées : 1. ... 2. ... 3. ..."
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgence
