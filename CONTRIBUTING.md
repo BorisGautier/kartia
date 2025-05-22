@@ -18,7 +18,7 @@ Si vous trouvez des bugs, veuillez créer une nouvelle "Issue" en fournissant au
 
 ## Proposer des fonctionnalités
 
-Si vous avez des idées d'améliorations ou de nouvelles fonctionnalités, veuillez créer une nouvelle "Issue" pour discuter de votre proposition. Nous sommes ouverts aux suggestions et aux discussions constructives.
+Si vous avez des idées d'améliorations ou de nouvelles fonctionnalités, veuillez créer une nouvelle "Issue" pour discuter de votre proKartIA. Nous sommes ouverts aux suggestions et aux discussions constructives.
 
 ## Code de conduite
 
