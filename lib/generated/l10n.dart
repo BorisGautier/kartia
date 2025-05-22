@@ -59,6 +59,11 @@ class KartiaLocalizations {
   String get appname {
     return Intl.message('Kartia', name: 'appname', desc: '', args: []);
   }
+
+  /// `Chargement...`
+  String get loading {
+    return Intl.message('Chargement...', name: 'loading', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate

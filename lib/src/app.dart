@@ -5,8 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartia/generated/l10n.dart';
 import 'package:kartia/src/core/di/di.dart';
 import 'package:kartia/src/modules/app/bloc/app_bloc.dart';
-import 'package:kartia/src/modules/home/views/home.screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:kartia/src/modules/home/views/home.screen.dart';
+import 'package:kartia/src/modules/splash/bloc/splash_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
       providers: [
         // Le bloc AppBloc est fourni à l'ensemble de l'application.
         BlocProvider(create: (context) => getIt<AppBloc>()),
+        // Le bloc SplashBloc est fourni à l'ensemble de l'application.
+        BlocProvider(create: (context) => getIt<SplashBloc>()),
       ],
       child: BlocBuilder<AppBloc, AppState>(
         builder: (context, state) {
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: KartiaLocalizations.delegate.supportedLocales,
             // Désactive la bannière de débogage.
             debugShowCheckedModeBanner: false,
-            // Le widget LoadingPage est affiché en tant que page d'accueil de l'application.
+            // Le widget SplashScreen est affiché en tant que page d'accueil de l'application.
             home: const HomeScreen(),
           );
         },

@@ -1,4 +1,5 @@
 {
   "@@locale": "fr",
-  "appname": "Kartia"
+  "appname": "Kartia",
+  "loading": "Chargement..."
 }

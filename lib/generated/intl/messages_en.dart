@@ -23,5 +23,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appname": MessageLookupByLibrary.simpleMessage("Kartia"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
   };
 }

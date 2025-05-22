@@ -4,6 +4,7 @@ import 'package:kartia/src/core/helpers/sharedpreferences.helper.dart';
 import 'package:kartia/src/core/services/log.service.dart';
 import 'package:kartia/src/modules/app/bloc/app_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:kartia/src/modules/splash/bloc/splash_bloc.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -23,4 +24,5 @@ Future<void> init() async {
   //Bloc
   // Enregistrement des instances des différents blocs
   getIt.registerFactory<AppBloc>(() => AppBloc(logger: getIt()));
+  getIt.registerFactory<SplashBloc>(() => SplashBloc());
 }
