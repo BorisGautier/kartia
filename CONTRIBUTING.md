@@ -1,8 +1,8 @@
 ### CONTRIBUTING.md
 
-# Contribuer à Position
+# Contribuer à KartIA
 
-Merci de votre intérêt pour contribuer à Position ! Nous accueillons les contributions de la communauté pour améliorer et faire évoluer ce projet. Avant de commencer, veuillez lire ce guide pour comprendre comment contribuer de manière efficace.
+Merci de votre intérêt pour contribuer à KartIA ! Nous accueillons les contributions de la communauté pour améliorer et faire évoluer ce projet. Avant de commencer, veuillez lire ce guide pour comprendre comment contribuer de manière efficace.
 
 ## Comment contribuer
 
@@ -18,7 +18,7 @@ Si vous trouvez des bugs, veuillez créer une nouvelle "Issue" en fournissant au
 
 ## Proposer des fonctionnalités
 
-Si vous avez des idées d'améliorations ou de nouvelles fonctionnalités, veuillez créer une nouvelle "Issue" pour discuter de votre proposition. Nous sommes ouverts aux suggestions et aux discussions constructives.
+Si vous avez des idées d'améliorations ou de nouvelles fonctionnalités, veuillez créer une nouvelle "Issue" pour discuter de votre proKartIA. Nous sommes ouverts aux suggestions et aux discussions constructives.
 
 ## Code de conduite
 
