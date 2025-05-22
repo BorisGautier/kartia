@@ -1,0 +1,164 @@
+name: 🐛 Bug Report
+description: Signaler un bug dans KartIA
+title: "[BUG] "
+labels: ["bug"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de signaler ce bug ! Cela nous aide à améliorer KartIA.
+        Veuillez fournir autant de détails que possible.
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module affecté
+      description: Dans quel module le bug se produit-il ?
+      options:
+        - Authentification
+        - Carte principale
+        - Module CivAct (Signalement)
+        - Module CityAI Guide (Découverte)
+        - Module SantéMap (Santé)
+        - Module OSM Helper
+        - Module CartoPrix
+        - Notifications
+        - Performance
+        - Interface utilisateur
+        - Mode hors-ligne
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du bug
+      description: Description claire et concise du problème
+      placeholder: "Le bug se produit quand..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      description: Étapes détaillées pour reproduire le comportement
+      placeholder: |
+        1. Aller à '...'
+        2. Cliquer sur '...'
+        3. Faire défiler jusqu'à '...'
+        4. Voir l'erreur
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+      description: Décrivez ce qui devrait se passer normalement
+      placeholder: "Je m'attendais à ce que..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportement actuel
+      description: Décrivez ce qui se passe réellement
+      placeholder: "Au lieu de cela, il se passe..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plateforme
+      description: Sur quelle plateforme le bug se produit-il ?
+      options:
+        - Android
+        - iOS
+        - Les deux
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version de l'app
+      description: Quelle version de KartIA utilisez-vous ?
+      placeholder: "ex: 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Appareil
+      description: Modèle et version OS de votre appareil
+      placeholder: "ex: Samsung Galaxy A20, Android 11"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Fréquence
+      description: À quelle fréquence ce bug se produit-il ?
+      options:
+        - Toujours (100%)
+        - Souvent (>50%)
+        - Parfois (10-50%)
+        - Rarement (<10%)
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Sévérité
+      description: Quelle est la gravité de ce bug ?
+      options:
+        - Critique (app crash/inutilisable)
+        - Haute (fonctionnalité majeure cassée)
+        - Moyenne (fonctionnalité mineure affectée)
+        - Basse (problème cosmétique)
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: connectivity
+    attributes:
+      label: Conditions réseau
+      description: Dans quelles conditions réseau le bug se produit-il ?
+      options:
+        - label: WiFi
+        - label: Données mobiles (4G/3G)
+        - label: Connexion lente
+        - label: Mode hors-ligne
+        - label: Toutes les conditions
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs/Messages d'erreur
+      description: Copiez ici les logs ou messages d'erreur (si disponibles)
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Captures d'écran
+      description: Ajoutez des captures d'écran pour aider à expliquer le problème
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexte additionnel
+      description: Ajoutez tout autre contexte sur le problème

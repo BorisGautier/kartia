@@ -1,0 +1,92 @@
+name: 🔒 Security Issue
+description: Signaler un problème de sécurité (CONFIDENTIEL)
+title: "[SECURITY] "
+labels: ["security", "bug"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **ATTENTION : Ne divulguez JAMAIS de détails sur une vulnérabilité de sécurité publiquement !**
+        
+        Si vous avez trouvé une vulnérabilité de sécurité critique, veuillez nous contacter directement à : security@kartia.app
+        
+        Cette issue template est pour les problèmes de sécurité non-critiques ou les améliorations générales de sécurité.
+
+  - type: dropdown
+    id: security_area
+    attributes:
+      label: Domaine de sécurité
+      description: Quel aspect de la sécurité est concerné ?
+      options:
+        - Authentification
+        - Autorisation/Permissions
+        - Protection des données
+        - Communication réseau
+        - Stockage local
+        - Validation des entrées
+        - Configuration
+        - Dépendances
+        - Infrastructure
+        - Conformité RGPD
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type de problème
+      description: Quel type de problème de sécurité signalez-vous ?
+      options:
+        - Amélioration sécurité
+        - Configuration insécurisée
+        - Dépendance vulnérable
+        - Manque de validation
+        - Problème RGPD/Privacy
+        - Autre (non-critique)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description (générale)
+      description: Décrivez le problème de sécurité en termes généraux
+      placeholder: "Il serait plus sécurisé de..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Sévérité estimée
+      description: Quelle est la sévérité estimée ? (Si critique, contactez security@kartia.app)
+      options:
+        - Basse (amélioration)
+        - Moyenne (problème notable)
+        - Haute (problème important)
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommandation
+      description: Quelle amélioration/solution recommandez-vous ?
+      placeholder: "Je recommande de..."
+
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: Conformité
+      description: Ce problème affecte-t-il la conformité réglementaire ?
+      options:
+        - label: RGPD/Protection des données
+        - label: Réglementations locales africaines
+        - label: Standards de sécurité mobile
+        - label: Autres réglementations

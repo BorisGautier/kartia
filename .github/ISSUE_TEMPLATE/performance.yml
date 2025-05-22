@@ -1,0 +1,113 @@
+name: ⚡ Performance Issue
+description: Signaler un problème de performance
+title: "[PERFORMANCE] "
+labels: ["enhancement", "performance"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Signalez un problème de performance dans KartIA pour nous aider à optimiser l'application.
+
+  - type: dropdown
+    id: performance_area
+    attributes:
+      label: Domaine de performance
+      description: Dans quel domaine observez-vous le problème de performance ?
+      options:
+        - Temps de démarrage app
+        - Navigation entre écrans
+        - Chargement de la carte
+        - Affichage des signalements
+        - Recherche/Filtres
+        - Upload d'images
+        - Synchronisation données
+        - Animation/Transitions
+        - Consommation mémoire
+        - Consommation batterie
+        - Taille de l'app
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Description du problème
+      description: Décrivez le problème de performance observé
+      placeholder: "L'app est lente quand..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_reproduce
+    attributes:
+      label: Étapes pour reproduire
+      description: Comment reproduire le problème de performance ?
+      placeholder: |
+        1. Ouvrir l'app
+        2. Naviguer vers...
+        3. Effectuer l'action...
+        4. Observer la lenteur
+    validations:
+      required: true
+
+  - type: input
+    id: performance_metric
+    attributes:
+      label: Métrique observée
+      description: Temps de chargement, FPS, utilisation mémoire, etc.
+      placeholder: "ex: 15 secondes de chargement, 20 FPS, 200MB RAM"
+
+  - type: input
+    id: device_specs
+    attributes:
+      label: Spécifications de l'appareil
+      description: Modèle, RAM, processeur, version OS
+      placeholder: "ex: Galaxy A20, 3GB RAM, Exynos 7884, Android 11"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: network_condition
+    attributes:
+      label: Condition réseau
+      description: Dans quelles conditions réseau le problème se produit-il ?
+      options:
+        - WiFi rapide
+        - WiFi lent
+        - 4G/LTE
+        - 3G
+        - 2G
+        - Mode hors-ligne
+        - Toutes les conditions
+      default: 6
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Sévérité
+      description: À quel point ce problème affecte-t-il l'utilisation ?
+      options:
+        - Critique (app inutilisable)
+        - Sévère (gêne importante)
+        - Modérée (gêne notable)
+        - Mineure (légère gêne)
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_performance
+    attributes:
+      label: Performance attendue
+      description: Quelle performance attendez-vous ?
+      placeholder: "Je m'attends à ce que..."
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Informations supplémentaires
+      description: Profiling, logs, captures d'écran des outils de développement

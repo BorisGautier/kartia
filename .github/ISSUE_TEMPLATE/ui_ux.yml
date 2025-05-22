@@ -1,0 +1,115 @@
+name: 🎨 UI/UX Improvement
+description: Amélioration de l'interface utilisateur ou de l'expérience utilisateur
+title: "[UI/UX] "
+labels: ["ui", "enhancement"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposez une amélioration de l'interface ou de l'expérience utilisateur de KartIA.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Composant/Écran concerné
+      description: Quel composant ou écran voulez-vous améliorer ?
+      options:
+        - Écran de connexion/inscription
+        - Écran principal/carte
+        - Navigation générale
+        - Module CivAct (Signalement)
+        - Module CityAI Guide
+        - Module SantéMap
+        - Module OSM Helper
+        - Module CartoPrix
+        - Profil utilisateur
+        - Paramètres
+        - Onboarding
+        - Notifications
+        - Design System global
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: improvement_type
+    attributes:
+      label: Type d'amélioration
+      description: Quel type d'amélioration proposez-vous ?
+      options:
+        - Usabilité/Navigation
+        - Accessibilité
+        - Design visuel
+        - Performance/Fluidité
+        - Responsive design
+        - Micro-interactions
+        - Information architecture
+        - Erreur UX/Confusion
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_issue
+    attributes:
+      label: Problème actuel
+      description: Décrivez le problème d'UX/UI actuel
+      placeholder: "Actuellement, les utilisateurs ont du mal à..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Solution proposée
+      description: Décrivez votre solution d'amélioration
+      placeholder: "Je propose de..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Impact utilisateur
+      description: Quel est l'impact de cette amélioration sur l'expérience utilisateur ?
+      options:
+        - Critique (bloque l'utilisation)
+        - Haut (amélioration significative)
+        - Moyen (amélioration notable)
+        - Bas (amélioration mineure)
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: target_users
+    attributes:
+      label: Utilisateurs concernés
+      description: Quels types d'utilisateurs bénéficieraient de cette amélioration ?
+      options:
+        - label: Nouveaux utilisateurs
+        - label: Utilisateurs réguliers
+        - label: Utilisateurs experts
+        - label: Utilisateurs avec handicaps
+        - label: Utilisateurs sur devices bas de gamme
+        - label: Utilisateurs avec connexion lente
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups/Références
+      description: Ajoutez des mockups, wireframes, ou références visuelles
+
+  - type: checkboxes
+    id: testing
+    attributes:
+      label: Tests utilisateur
+      description: Cette amélioration nécessite-t-elle des tests utilisateur ?
+      options:
+        - label: Tests d'usabilité recommandés
+        - label: Tests A/B suggérés
+        - label: Feedback communauté souhaité

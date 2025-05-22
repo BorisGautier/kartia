@@ -1,0 +1,100 @@
+name: 🚀 Feature Request
+description: Proposer une nouvelle fonctionnalité pour KartIA
+title: "[FEATURE] "
+labels: ["feature", "enhancement"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer une nouvelle fonctionnalité pour KartIA ! 
+        Veuillez remplir les sections ci-dessous pour nous aider à comprendre votre demande.
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module concerné
+      description: Quel module de KartIA est concerné par cette feature ?
+      options:
+        - Core/Infrastructure
+        - Module CivAct (Signalement)
+        - Module CityAI Guide (Découverte)
+        - Module SantéMap (Santé)
+        - Module OSM Helper
+        - Module CartoPrix
+        - Interface/UX
+        - Performance
+        - Sécurité
+        - Documentation
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème/Besoin
+      description: Décrivez le problème que cette fonctionnalité résoudrait
+      placeholder: "En tant qu'utilisateur, j'ai besoin de... parce que..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+      description: Décrivez la solution que vous aimeriez voir implémentée
+      placeholder: "Je propose que..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considérées
+      description: Décrivez les solutions alternatives que vous avez envisagées
+      placeholder: "J'ai aussi pensé à..."
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorité
+      description: Quelle est la priorité de cette fonctionnalité ?
+      options:
+        - Critique
+        - Haute
+        - Moyenne
+        - Basse
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Complexité estimée
+      description: Quelle complexité estimez-vous pour cette fonctionnalité ?
+      options:
+        - Simple (1-2 jours)
+        - Moyenne (3-5 jours)
+        - Complexe (1-2 semaines)
+        - Très complexe (>2 semaines)
+      default: 1
+
+  - type: checkboxes
+    id: context
+    attributes:
+      label: Contexte africain
+      description: Cette fonctionnalité est-elle spécifique au contexte africain ?
+      options:
+        - label: Cette fonctionnalité répond à un besoin spécifique au contexte africain
+        - label: Cette fonctionnalité améliore l'accessibilité pour les utilisateurs africains
+        - label: Cette fonctionnalité fonctionne avec une connectivité limitée
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexte additionnel
+      description: Ajoutez tout autre contexte, captures d'écran, ou liens utiles

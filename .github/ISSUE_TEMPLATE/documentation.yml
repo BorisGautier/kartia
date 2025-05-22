@@ -1,0 +1,95 @@
+name: 📚 Documentation
+description: Amélioration ou ajout de documentation
+title: "[DOCS] "
+labels: ["documentation"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de contribuer à améliorer la documentation de KartIA !
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Type de documentation
+      description: Quel type de documentation voulez-vous améliorer/ajouter ?
+      options:
+        - Documentation utilisateur
+        - Documentation développeur
+        - API Documentation
+        - Guide de contribution
+        - Tutorial/Guide pratique
+        - FAQ
+        - Architecture
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Public cible
+      description: À qui s'adresse cette documentation ?
+      options:
+        - Utilisateurs finaux
+        - Développeurs débutants
+        - Développeurs expérimentés
+        - Contributeurs OSM
+        - Administrateurs
+        - Chercheurs/Analystes
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Décrivez ce qui doit être documenté ou amélioré
+      placeholder: "Il manque de la documentation sur..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: État actuel
+      description: Décrivez l'état actuel de la documentation (si elle existe)
+      placeholder: "Actuellement, la documentation..."
+
+  - type: textarea
+    id: proposed_content
+    attributes:
+      label: Contenu proposé
+      description: Esquissez le contenu ou l'amélioration proposée
+      placeholder: "Je propose d'ajouter/modifier..."
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Langue
+      description: Dans quelle(s) langue(s) cette documentation devrait-elle être disponible ?
+      options:
+        - Français seulement
+        - Anglais seulement
+        - Français et Anglais
+        - Multilingue (inclure langues africaines)
+      default: 2
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: format
+    attributes:
+      label: Format souhaité
+      description: Quel format serait le plus approprié ?
+      options:
+        - label: Texte/Markdown
+        - label: Vidéo/Tutorial
+        - label: Infographie
+        - label: Code examples
+        - label: Screenshots/Diagrammes
+        - label: FAQ interactive

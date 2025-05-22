@@ -1,0 +1,117 @@
+name: 🌐 Translation/Localization
+description: Amélioration ou ajout de traductions
+title: "[L10N] "
+labels: ["localization", "enhancement"]
+assignees:
+  - BorisGautier
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Aidez-nous à améliorer la localisation de KartIA pour les utilisateurs africains !
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Langue concernée
+      description: Quelle langue voulez-vous améliorer ou ajouter ?
+      options:
+        - Français
+        - Anglais
+        - Arabe
+        - Swahili
+        - Wolof
+        - Hausa
+        - Yoruba
+        - Amharique
+        - Autre langue africaine
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: other_language
+    attributes:
+      label: Autre langue (si applicable)
+      description: Spécifiez la langue si vous avez sélectionné "Autre"
+      placeholder: "ex: Bambara, Lingala, etc."
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type de problème
+      description: Quel type de problème de localisation signalez-vous ?
+      options:
+        - Traduction incorrecte
+        - Texte manquant
+        - Nouvelle langue à ajouter
+        - Adaptation culturelle
+        - Format date/heure/monnaie
+        - Adaptation UI pour langue
+        - Autre
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module/Écran concerné
+      description: Dans quel module ou écran se trouve le problème ?
+      options:
+        - Global/Navigation
+        - Authentification
+        - Onboarding
+        - Carte principale
+        - Module CivAct
+        - Module CityAI Guide
+        - Module SantéMap
+        - Module OSM Helper
+        - Module CartoPrix
+        - Paramètres
+        - Notifications
+        - Erreurs/Messages
+        - Autre
+      default: 0
+
+  - type: textarea
+    id: current_text
+    attributes:
+      label: Texte actuel
+      description: Copiez le texte actuel (incorrect ou à améliorer)
+      placeholder: "Texte actuel : ..."
+
+  - type: textarea
+    id: proposed_text
+    attributes:
+      label: Texte proposé
+      description: Proposez une traduction ou amélioration
+      placeholder: "Texte proposé : ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte
+      description: Donnez le contexte d'utilisation de ce texte
+      placeholder: "Ce texte apparaît quand..."
+
+  - type: checkboxes
+    id: cultural_adaptation
+    attributes:
+      label: Adaptation culturelle
+      description: Cette traduction nécessite-t-elle une adaptation culturelle ?
+      options:
+        - label: Adaptation aux usages locaux
+        - label: Références culturelles spécifiques
+        - label: Formules de politesse locales
+        - label: Expressions idiomatiques
+        - label: Formats monétaires/numériques
+
+  - type: input
+    id: native_speaker
+    attributes:
+      label: Locuteur natif
+      description: Êtes-vous locuteur natif de cette langue ?
+      placeholder: "Oui/Non et votre région"
