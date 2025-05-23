@@ -1,6 +1,7 @@
 // lib/services/log_service.dart
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:kartia/src/core/utils/configs.util.dart';
 import 'package:kartia/src/core/utils/logging.util.dart';
 import 'package:logger/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -55,7 +56,7 @@ class LogService {
       output: MultiOutput([
         ConsoleOutput(), // Pour voir les logs en console pendant le développement
         GraylogOutput(
-          graylogUrl: 'http://95.111.249.141:12201/gelf',
+          graylogUrl: graylogUrl!,
           source: 'flutter-app-${packageInfo.appName}',
           additionalFields: {
             'appVersion': packageInfo.version,
